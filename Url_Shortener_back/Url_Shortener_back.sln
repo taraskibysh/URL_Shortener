@@ -6,6 +6,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url_shortener.BLL", "Url_sh
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url_shortener.DAL", "Url_shortener.DAL\Url_shortener.DAL.csproj", "{2D6779E4-6208-4E39-A04D-809B3B1929D2}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Urs_shortener.Models", "Urs_shortener.Models\Urs_shortener.Models.csproj", "{474957B9-07FE-4100-9285-10ED9D510931}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,5 +26,9 @@ Global
 		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{474957B9-07FE-4100-9285-10ED9D510931}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{474957B9-07FE-4100-9285-10ED9D510931}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{474957B9-07FE-4100-9285-10ED9D510931}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{474957B9-07FE-4100-9285-10ED9D510931}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 EndGlobal

@@ -7,7 +7,17 @@
     </PropertyGroup>
 
     <ItemGroup>
-      <Folder Include="repositories\" />
+      <PackageReference Include="MediatR" Version="13.0.0" />
+      <PackageReference Include="Microsoft.AspNetCore.Identity.EntityFrameworkCore" Version="8.0.20" />
+      <PackageReference Include="System.IdentityModel.Tokens.Jwt" Version="8.14.0" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <Folder Include="Queries\" />
+    </ItemGroup>
+
+    <ItemGroup>
+      <ProjectReference Include="..\Url_shortener.DAL\Url_shortener.DAL.csproj" />
     </ItemGroup>
 
 </Project>
