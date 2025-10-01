@@ -1,7 +1,4 @@
 using System.Reflection;
-using Microsoft.AspNetCore.Builder;
-using Microsoft.Extensions.DependencyInjection;
-using Microsoft.Extensions.Hosting;
 using Url_shortener.BLL.Commands.CreateUrl;
 using MediatR;
 using Microsoft.EntityFrameworkCore;
@@ -16,7 +13,10 @@ using Urs_shortener.Models.Models;
 using Microsoft.AspNetCore.Identity;
 using Url_shortener.DAL.Seeders;
 using Microsoft.OpenApi.Models;
+using Url_shortener.BLL.Configuration;
+using Url_shortener.BLL.MappingProfile;
 using Url_shortener.BLL.Services.HashService; 
+using AutoMapper; 
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -64,6 +64,16 @@ builder.Services.AddSwaggerGen(c =>
         }
     });
 });
+
+builder.Services.AddTransient<ShortUrlResolver>();
+builder.Services.AddAutoMapper(cfg =>
+{
+    cfg.AddMaps(typeof(UrlProfile).Assembly);
+});
+
+builder.Services.Configure<HashGeneratorOptions>(
+    builder.Configuration.GetSection("HashGenerator"));
+
 
 builder.Services.AddAuthentication(options =>
 {

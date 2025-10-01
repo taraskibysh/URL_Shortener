@@ -52,4 +52,15 @@ public class UrlRepository : IUrlRepository
         var originalValue = await _dbContext.Urls.FirstOrDefaultAsync(u => u.Id == id);
         return originalValue;
     }
+    
+    public async Task<IEnumerable<UrlEntry>> GetAll()
+    {
+        return await _dbContext.Urls.ToListAsync();
+    }
+
+    public async Task<UrlEntry> GetByShortCode(string code)
+    {
+       return await _dbContext.Urls.FirstOrDefaultAsync((e) => e.ShortCode == code);
+    }
+
 }
