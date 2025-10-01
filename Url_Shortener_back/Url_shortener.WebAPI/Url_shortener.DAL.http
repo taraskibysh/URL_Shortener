@@ -1,0 +1,6 @@
+@Url_shortener.DAL_HostAddress = http://localhost:5099
+
+GET {{Url_shortener.DAL_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###

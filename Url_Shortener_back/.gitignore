@@ -1,0 +1,67 @@
+### Rider ###
+.idea/
+*.sln.iml
+
+### Visual Studio / .NET ###
+.vs/
+*.user
+*.suo
+*.userosscache
+*.sln.docstates
+
+### Build results ###
+bin/
+obj/
+out/
+build/
+[Bb]uild[Ll]og.*
+
+### ASP.NET publish ###
+wwwroot/lib/
+project.lock.json
+project.fragment.lock.json
+artifacts/
+publish/
+AppPackages/
+BundleArtifacts/
+Package.StoreAssociation.xml
+_app/
+*_i.c
+*_p.c
+*_h.h
+*.dbmdl
+
+### NuGet ###
+*.nupkg
+*.snupkg
+*.nuspec
+*.nuget.props
+*.nuget.targets
+packages/
+*.lock.json
+
+### Logs and temp ###
+*.log
+*.tlog
+*.vspscc
+*.vssscc
+*.userprefs
+*.swp
+*.tmp
+*.temp
+*.bak
+
+### OS specific ###
+# macOS
+.DS_Store
+.AppleDouble
+.LSOverride
+
+# Windows
+Thumbs.db
+ehthumbs.db
+Desktop.ini
+$RECYCLE.BIN/
+
+# Linux
+*~

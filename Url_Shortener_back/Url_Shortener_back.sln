@@ -1,0 +1,28 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url_shortener.WebAPI", "Url_shortener.WebAPI\Url_shortener.WebAPI.csproj", "{FAD310E0-2FB3-48BD-812F-F31D19399CDB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url_shortener.BLL", "Url_shortener.BLL\Url_shortener.BLL.csproj", "{65D77DBC-F89B-4412-879D-47099EB37CF5}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Url_shortener.DAL", "Url_shortener.DAL\Url_shortener.DAL.csproj", "{2D6779E4-6208-4E39-A04D-809B3B1929D2}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{FAD310E0-2FB3-48BD-812F-F31D19399CDB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{FAD310E0-2FB3-48BD-812F-F31D19399CDB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{FAD310E0-2FB3-48BD-812F-F31D19399CDB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{FAD310E0-2FB3-48BD-812F-F31D19399CDB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{65D77DBC-F89B-4412-879D-47099EB37CF5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{65D77DBC-F89B-4412-879D-47099EB37CF5}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{65D77DBC-F89B-4412-879D-47099EB37CF5}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{65D77DBC-F89B-4412-879D-47099EB37CF5}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2D6779E4-6208-4E39-A04D-809B3B1929D2}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+EndGlobal
