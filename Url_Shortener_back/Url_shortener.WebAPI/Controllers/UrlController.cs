@@ -30,18 +30,19 @@ namespace Url_shortener.DAL.Controllers
         }
         
         [HttpGet()]
+        [AllowAnonymous]
         public async Task<IActionResult> GetAll()
         {
             var result = await _mediator.Send( new GetAllUrlQuery());
             return Ok(result);
         }
         [HttpPost]
-        public async Task<IActionResult> CreateUrl([FromBody] string url)
+        public async Task<IActionResult> CreateUrl([FromBody] CreateUrlDto dto)
         {
-            if (string.IsNullOrWhiteSpace(url))
+            if (string.IsNullOrWhiteSpace(dto.Url))
                 return BadRequest("URL cannot be empty.");
 
-            var result = await _mediator.Send(new CreateUrlCommand(url));
+            var result = await _mediator.Send(new CreateUrlCommand(dto));
             return Ok(result);
         }
         

@@ -1,5 +1,6 @@
 ﻿using MediatR;
 using Url_shortener.BLL.Services;
+using Url_shortener.BLL.Services.HashService;
 using Url_shortener.DAL.Repositories;
 
 namespace Url_shortener.BLL.Commands.DeleteUrl;

@@ -9,4 +9,6 @@ public class UrlResponceDto
 
     public DateTime CreatedAt { get; set; } = DateTime.UtcNow;
     public string UserId { get; set; }
+    
+    public string OwnerName { get; set; }
 }

@@ -8,7 +8,6 @@ using Url_shortener.DAL.Repositories;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
-using Url_shortener.BLL.Services.AuthService;
 using Urs_shortener.Models.Models; 
 using Microsoft.AspNetCore.Identity;
 using Url_shortener.DAL.Seeders;
@@ -16,7 +15,8 @@ using Microsoft.OpenApi.Models;
 using Url_shortener.BLL.Configuration;
 using Url_shortener.BLL.MappingProfile;
 using Url_shortener.BLL.Services.HashService; 
-using AutoMapper; 
+using AutoMapper;
+using Url_shortener.BLL.Services.TokenService;
 
 var builder = WebApplication.CreateBuilder(args);
 
@@ -99,6 +99,16 @@ builder.Services.AddAuthentication(options =>
     };
 });
 
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", policy =>
+    {
+        policy.AllowAnyOrigin()   
+            .AllowAnyHeader()   
+            .AllowAnyMethod();  
+    });
+});
+
 builder.Services.AddMediatR(cfg =>
 {
     cfg.RegisterServicesFromAssemblies(
@@ -142,8 +152,7 @@ if (app.Environment.IsDevelopment())
 }
 
 app.UseHttpsRedirection();
-
-
+app.UseCors("AllowAll");
 app.UseAuthentication();
 
 app.UseAuthorization();

@@ -34,6 +34,11 @@ namespace Url_shortener.DAL
                     .HasMaxLength(2048); 
 
                 entity.HasIndex(e => e.UserId);
+                
+                entity.HasOne(e => e.User)
+                    .WithMany(u => u.Urls)
+                    .HasForeignKey(e => e.UserId)
+                    .OnDelete(DeleteBehavior.Cascade);
             });
             
         }

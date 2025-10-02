@@ -1,4 +1,4 @@
-﻿namespace Url_shortener.BLL.Services;
+﻿namespace Url_shortener.BLL.Services.HashService;
 
 public interface IHashService
 {

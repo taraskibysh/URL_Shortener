@@ -14,6 +14,7 @@ public class GetRedirectedQueryHandler : IRequestHandler<GetRedirectQuery, strin
     public async Task<string> Handle(GetRedirectQuery request, CancellationToken cancellationToken)
     {
         var result = await _repository.GetByShortCode(request.ShortUrl);
+        
         return result.OriginalUrl;
     }
 }

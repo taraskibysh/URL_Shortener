@@ -2,7 +2,6 @@
 using MediatR;
 using Url_shortener.DAL.Repositories;
 using Urs_shortener.Models.Dtos;
-using Urs_shortener.Models.Models;
 
 namespace Url_shortener.BLL.Queries.GetAllQuery;
 

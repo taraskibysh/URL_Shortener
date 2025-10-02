@@ -2,7 +2,7 @@
 using MediatR;
 using Microsoft.AspNetCore.Identity;
 using Url_shortener.BLL.Services;
-using Url_shortener.BLL.Services.AuthService;
+using Url_shortener.BLL.Services.TokenService;
 using Urs_shortener.Models.Models;
 
 namespace Url_shortener.BLL.Commands.Auth.Register;
@@ -41,7 +41,7 @@ public class RegisterCommandHandler: IRequestHandler<RegisterCommand, string>
             var errors = result.Errors.Select(e => e.Description);
             var errorMessage = string.Join(", ", errors);
             
-            throw new ArgumentException($"Помилка реєстрації: {errorMessage}");
+            throw new ArgumentException($"Registration error: {errorMessage}");
         }
 
         await _userManager.AddToRoleAsync(user, "User");

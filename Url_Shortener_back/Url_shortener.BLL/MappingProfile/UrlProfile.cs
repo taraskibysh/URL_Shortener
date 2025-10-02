@@ -10,7 +10,8 @@ public class UrlProfile : Profile
     public UrlProfile()
     {
         CreateMap<UrlEntry, UrlResponceDto>()
-            .ForMember(dest => dest.ShortUrl, opt => opt.MapFrom<ShortUrlResolver>());
+            .ForMember(dest => dest.ShortUrl, opt => opt.MapFrom<ShortUrlResolver>())
+            .ForMember(dest => dest.OwnerName, opt => opt.MapFrom(src => src.User.UserName));
     }
 }
 

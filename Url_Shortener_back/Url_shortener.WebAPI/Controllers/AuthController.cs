@@ -8,7 +8,7 @@ namespace Url_shortener.DAL.Controllers;
 
 
 [ApiController]
-[Route("api/[controller]")]
+[Route("api")]
 public class AuthController: ControllerBase
 {
     private readonly IMediator _mediator;
@@ -18,7 +18,7 @@ public class AuthController: ControllerBase
         _mediator = mediator;
     }
     
-    [HttpPost("/register")]
+    [HttpPost("register")]
     public async Task<IActionResult> Register([FromBody] RegisterDto dto)
     {
         var result = await _mediator.Send(new RegisterCommand(dto));
@@ -30,7 +30,7 @@ public class AuthController: ControllerBase
         });
     }
 
-    [HttpPost("/login")]
+    [HttpPost("login")]
     public async Task<IActionResult> Login([FromBody] LoginDto dto)
     {
         var result = await _mediator.Send(new LoginCommand(dto));

@@ -4,7 +4,7 @@ using System.Text;
 using Microsoft.Extensions.Configuration;
 using Microsoft.IdentityModel.Tokens;
 
-namespace Url_shortener.BLL.Services.AuthService;
+namespace Url_shortener.BLL.Services.TokenService;
 
 public class TokenService : ITokenService
 {

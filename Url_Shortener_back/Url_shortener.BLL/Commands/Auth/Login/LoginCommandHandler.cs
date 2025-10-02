@@ -1,7 +1,7 @@
 ﻿using System.Security.Claims;
 using MediatR;
 using Microsoft.AspNetCore.Identity;
-using Url_shortener.BLL.Services.AuthService;
+using Url_shortener.BLL.Services.TokenService;
 using Urs_shortener.Models.Models;
 
 namespace Url_shortener.BLL.Commands.Auth.Login;
@@ -27,16 +27,11 @@ public class LoginCommandHandler : IRequestHandler<LoginCommand, string>
            throw new InvalidOperationException($"User with email {model.Email} not found.");
         }
 
-        if (user == null)
-        {
-            throw new ArgumentException("Невірний логін або пароль."); 
-        }
-
         var isPasswordValid = await _userManager.CheckPasswordAsync(user, model.Password);
 
         if (!isPasswordValid)
         {
-            throw new ArgumentException("Невірний логін або пароль."); 
+            throw new ArgumentException("Wrong password or email"); 
         }
 
         var customClaims = await _userManager.GetClaimsAsync(user);

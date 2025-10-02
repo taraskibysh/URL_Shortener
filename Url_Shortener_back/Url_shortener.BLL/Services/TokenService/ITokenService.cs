@@ -1,6 +1,6 @@
 ﻿using System.Security.Claims;
 
-namespace Url_shortener.BLL.Services.AuthService;
+namespace Url_shortener.BLL.Services.TokenService;
 
 public interface ITokenService
 {

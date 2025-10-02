@@ -21,17 +21,17 @@ public class UrlRepository : IUrlRepository
     
     public async Task<UrlEntry> Update(UrlEntry entity, long id)
     {
-        var originalValue = await _dbContext.Urls.FirstOrDefaultAsync(u => u.Id == id);
+        var originalValue = await _dbContext.Urls
+            .Include(u => u.User)
+            .FirstOrDefaultAsync(u => u.Id == id);
+
         if (originalValue == null)
-        {
             throw new KeyNotFoundException($"UrlEntry with ID {id} was not found.");
-        }
 
         originalValue.OriginalUrl = entity.OriginalUrl;
         originalValue.ShortCode = entity.ShortCode;
 
         await _dbContext.SaveChangesAsync();  
-
         return originalValue;
     }
 
@@ -49,18 +49,21 @@ public class UrlRepository : IUrlRepository
 
     public async Task<UrlEntry?> Get(long id)
     {
-        var originalValue = await _dbContext.Urls.FirstOrDefaultAsync(u => u.Id == id);
+        var originalValue = await _dbContext.Urls.Include(u => u.User)
+            .FirstOrDefaultAsync(u => u.Id == id);
         return originalValue;
     }
     
     public async Task<IEnumerable<UrlEntry>> GetAll()
     {
-        return await _dbContext.Urls.ToListAsync();
+        return await _dbContext.Urls.Include(u => u.User)
+            .ToListAsync();
     }
 
     public async Task<UrlEntry> GetByShortCode(string code)
     {
-       return await _dbContext.Urls.FirstOrDefaultAsync((e) => e.ShortCode == code);
+       return await _dbContext.Urls.Include(u => u.User)
+           .FirstOrDefaultAsync(e => e.ShortCode == code);
     }
 
 }
