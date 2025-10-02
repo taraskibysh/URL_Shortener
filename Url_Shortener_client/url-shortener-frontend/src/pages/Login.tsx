@@ -1,6 +1,6 @@
 import { useState, useContext, FormEvent } from "react";
 import { AuthContext } from "../contexts/AuthContext";
-import { loginUser, registerUser } from "../api/auth";
+import { loginUser, registerUser } from "../api/Auth";
 import './login.css';
 
 const Login = () => {
